@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>邱詩家 - Resume</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- React and ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel Standalone for JSX transformation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    // Lucide icon components
+    const ChevronDown = ({ size = 24, className = '' }) => {
+      React.useEffect(() => {
+        lucide.createIcons();
+      });
+      return <i data-lucide="chevron-down" className={className} style={{ width: size, height: size }}></i>;
+    };
+
+    const Mail = ({ size = 16 }) => {
+      React.useEffect(() => {
+        lucide.createIcons();
+      });
+      return <i data-lucide="mail" style={{ width: size, height: size }}></i>;
+    };
+
+    const Phone = ({ size = 16 }) => {
+      React.useEffect(() => {
+        lucide.createIcons();
+      });
+      return <i data-lucide="phone" style={{ width: size, height: size }}></i>;
+    };
+
+    const Globe = ({ size = 16 }) => {
+      React.useEffect(() => {
+        lucide.createIcons();
+      });
+      return <i data-lucide="globe" style={{ width: size, height: size }}></i>;
+    };
+
+    function FullResumeSite() {
+      const [expandedProject, setExpandedProject] = useState(null);
+
+      return (
+        <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 min-h-screen text-slate-900">
+          {/* Header */}
+          <header className="bg-white border-b-2 border-blue-500 sticky top-0 z-50 shadow-sm">
+            <div className="max-w-7xl mx-auto px-6 py-6">
+              <div className="flex justify-between items-start gap-6">
+                {/* Photo Section */}
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 bg-slate-200 rounded-full overflow-hidden flex items-center justify-center">
+                    {/* Replace the src below with your actual photo URL */}
+                    <img
+                      src="/images/cover.jpg"
+                      alt="邱詩家"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Alternative: If no image, shows initials */}
+                    {/* <span className="text-3xl font-bold text-slate-400">邱</span> */}
+                  </div>
+                </div>
+
+                {/* Name and Title Section */}
+                <div className="flex-1">
+                  <h1 className="text-4xl font-bold text-slate-900">邱詩家 Gabi</h1>
+                  <p className="text-blue-600 font-semibold mt-1">Senior Project Manager（Product Planning Focus）</p>
+                  <p className="text-sm text-slate-600 mt-2">
+                    擅長於 B2B 企業網站與平台的需求分析、資訊架構與產品規劃
+                  </p>
+                </div>
+
+                {/* Contact Info Section */}
+                <div className="flex flex-col gap-2 text-right text-sm flex-shrink-0">
+                  <a href="tel:0970228652" className="flex items-center justify-end gap-2 text-slate-700 hover:text-blue-600">
+                    <Phone size={16} /> 0970-228-652
+                  </a>
+                  <a href="mailto:antpower.56fk@gmail.com" className="flex items-center justify-end gap-2 text-slate-700 hover:text-blue-600">
+                    <Mail size={16} /> antpower.56fk@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <main className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+
+            {/* Professional Summary */}
+            <section className="bg-white rounded-lg shadow-md p-8 border-l-4 border-blue-500">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">Professional Summary | 專業摘要</h2>
+              <p className="text-slate-700 leading-relaxed text-base">
+                <span className="font-semibold">具 4 年以上網站專案管理經驗，並累積多年網站規劃與實作背景，擅長跨部門協作、使用者研究、需求洞察與產品規劃。</span><br />
+                熱愛找出問題本質並以結構化方式提出解決方案，熟悉從前期探索、規劃、執行到驗收的完整流程。近年積極往產品經理方向發展，對平台型產品、數據驅動決策與用戶體驗優化特別有熱情。注重效率與溝通，能在高不確定性環境中快速整合資訊、制定可行策略並落地執行。
+              </p>
+            </section>
+
+            {/* Skills */}
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Skills | 專業技能</h2>
+
+              {/* Product / PM Skills */}
+              <div className="bg-white rounded-lg shadow-md p-8 mb-6 border-l-4 border-blue-500">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 pb-2 border-b-2 border-blue-300">
+                  Product / PM Skills
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    'Requirement Analysis（需求分析）',
+                    'Information Architecture & Content Strategy',
+                    'Product Specification / Wireframing',
+                    'Cross-functional Collaboration（跨部門協作）',
+                    'Stakeholder Management（利害關係人管理）',
+                    'Process Design & Improvement',
+                    'Backlog / Scope / Timeline Management',
+                    'Pre-sales & Solution Planning',
+                    'CMS / SEO / Web Architecture Familiarity'
+                  ].map((skill, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <span className="text-blue-500 mr-3 mt-1">▸</span>
+                      <span className="text-slate-700">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tech & Tools */}
+              <div className="bg-white rounded-lg shadow-md p-8 mb-6 border-l-4 border-green-500">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 pb-2 border-b-2 border-green-300">
+                  Tech & Tools
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    'WordPress（架構理解、模組化、後台配置）',
+                    'HTML / CSS（了解前端切版與可行性）',
+                    'Figma（Wireframe、IA）',
+                    'Project tools（Asana / Trello / Jira）',
+                    'GA / SEO 基礎架構概念'
+                  ].map((skill, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <span className="text-green-500 mr-3 mt-1">▸</span>
+                      <span className="text-slate-700">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Soft Skills */}
+              <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-purple-500">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 pb-2 border-b-2 border-purple-300">
+                  Soft Skills
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    'Structured Communication',
+                    'Problem Solving',
+                    '跨部門溝通/協調',
+                    '英文（可協作、可閱讀技術資料）'
+                  ].map((skill, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <span className="text-purple-500 mr-3 mt-1">▸</span>
+                      <span className="text-slate-700">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Work Experience */}
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Work Experience | 工作經驗</h2>
+
+              {/* Main Job - Fully Expanded */}
+              <div className="bg-white rounded-lg shadow-md border-l-4 border-blue-500 overflow-hidden">
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900">Senior Project Manager / Product Planner</h3>
+                      <p className="text-blue-600 font-semibold mt-1">震豪數位科技股份有限公司</p>
+                      <p className="text-sm text-slate-600 mt-1">2021.03 – 2024.04 (4 年 1 個月)</p>
+                      <br />
+                      <p className="text-slate-700 leading-relaxed text-base">負責企業網站的前期規劃、需求分析、資訊架構設計、跨部門協作與專案管理。角色涵蓋 Pre-sales、產品企劃、開發可行性評估、時程控管及驗收，協助團隊建立較為成熟的專案流程，並推動網站產品化與規格標準化。</p>
+                    </div>
+                  </div>
+
+                  {/* Core Responsibilities */}
+                  <div className="mb-8">
+                    <h4 className="font-bold text-slate-900 mb-4 flex items-center pb-2 border-b-2 border-blue-300">
+                      <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">→</span>
+                      核心職責
+                    </h4>
+                    <ul className="ml-7 space-y-3">
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">前期需求與 Pre-sales</span>：與業務共同負責接觸客戶、理解產業背景、釐清需求與可行性；建立初步規格、報價架構與風險評估；必要時參與簡報與提案，提高專案成交率。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">需求訪談與資訊架構設計</span>：主導多方利害關係人訪談，將分散、模糊的需求重整為一致方向；負責企業產品線梳理、內容策略、SEO 友善架構制定。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">產品規格及開發協作</span>：撰寫產品流程、線框、功能說明及開發規格；與 UI/UX、前端、後端工程師協作，控管進度、品質與交付產出。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">開發規格制定</span>：與 UI/UX、前端、後端團隊協作，定義 20+ 份產品規格文件與 CMS 架構</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">跨部門溝通與專案管理</span>：擔任需求收斂窗口，對外統一方向、對內拆解任務；負責排程、風險管理、變更管理、UAT 驗收與上線。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-blue-500 mr-2">•</span>
+                        <span><span className="font-semibold">流程優化與知識建置</span>：建立前期需求審查與 PM 介入機制，改善過往因資訊不足導致的成本外溢；熟悉 WordPress 建置流程並建立估時與規格化標準，使團隊開發成本透明化。</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Key Achievements */}
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-4 flex items-center pb-2 border-b-2 border-green-300">
+                      <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">✓</span>
+                      主要成果
+                    </h4>
+                    <ul className="ml-7 space-y-3">
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        <span>導入 PM 早期介入機制，提高接案準確性並降低虧損案件發生率。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        <span>提高專案成交率，協助業務端讓網站專案營收明顯提升。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        <span>成功處理多利害關係人的複雜企業客戶（上市櫃、生醫、製造），使專案能在預期時程內上線交付。</span>
+                      </li>
+                      <li className="text-slate-700 flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        <span>強化開發流程標準化（估時、規格、交付格式），使跨部門協作效率大幅提高。<span className="font-semibold"></span></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Representative Projects - FULL STAR */}
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Representative Projects | 代表專案</h2>
+
+              <div className="space-y-4">
+                {/* Project 1 */}
+                <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                  <button
+                    onClick={() => setExpandedProject(expandedProject === 1 ? null : 1)}
+                    className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
+                  >
+                    <div className="text-left flex-1">
+                      <h3 className="text-xl font-bold text-slate-900">鈺創科技 Etron</h3>
+                      <p className="text-blue-600 font-semibold mt-1">上市櫃 IC Design 官網改版（優化後 STAR）</p>
+                      <p className="text-sm text-slate-600 mt-2">
+                        <span className="font-semibold">角色：</span>跨部門窗口統籌、需求分析、資訊架構規劃、開發協作
+                      </p>
+                    </div>
+                    <ChevronDown
+                      size={24}
+                      className={`text-slate-400 ml-4 flex-shrink-0 transition-transform ${
+                        expandedProject === 1 ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedProject === 1 && (
+                    <div className="border-t border-slate-200 px-8 py-6 bg-slate-50 space-y-6">
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">S (情境)</h4>
+                        <p className="text-slate-700">
+                          客戶為上市櫃 IC 設計公司，內部跨部門（研發、產品、行銷、投資人關係等）對網站方向與內容呈現標準各自為政，產品分類複雜、技術文件散落，且不同 TA（投資人、海外客戶、業務／FAE）對內容需求差異極大。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">T (任務)</h4>
+                        <p className="text-slate-700 mb-3">
+                          需在有限時程內統整多部門意見、重新架構內容階層，打造能同時支持：
+                        </p>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-orange-500 mr-2">•</span>
+                            投資人簡報需求
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-orange-500 mr-2">•</span>
+                            國際客戶快速理解產品線與技術規格
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-orange-500 mr-2">•</span>
+                            業務詢問單更有效被分配
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">A (行動)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">跨部門需求訪談與整合：</span>擔任跨部門主要窗口，與多位處長及專案成員進行需求訪談，整合分散資訊。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">資訊架構重建與 SEO 優化：</span>重建產品線分類邏輯、技術文件呈現方式與 SEO 架構。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">開發協作與 CMS 架構設計：</span>與 UI/UX、前端、後端密切協作，制定 CMS 架構與後台流程，使內容可維護且具延展性。</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">R (成果)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>成功統整跨部門意見，將原先分散的技術資料轉化為一致的內容架構，提升客戶內部溝通效率。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>新架構讓後續內容維運變得更直覺，業務端能更快速找到產品資料並回應詢問。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>網站整體可讀性提升，內容呈現更符合國際買主與投資人的使用習慣。</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Project 2 */}
+                <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                  <button
+                    onClick={() => setExpandedProject(expandedProject === 2 ? null : 2)}
+                    className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
+                  >
+                    <div className="text-left flex-1">
+                      <h3 className="text-xl font-bold text-slate-900">中租馬來西亞</h3>
+                      <p className="text-blue-600 font-semibold mt-1">跨國金融服務官網建置（優化後 STAR）</p>
+                      <p className="text-sm text-slate-600 mt-2">
+                        <span className="font-semibold">角色：</span>規格制定、SEO 架構、跨國開發協作
+                      </p>
+                    </div>
+                    <ChevronDown
+                      size={24}
+                      className={`text-slate-400 ml-4 flex-shrink-0 transition-transform ${
+                        expandedProject === 2 ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedProject === 2 && (
+                    <div className="border-t border-slate-200 px-8 py-6 bg-slate-50 space-y-6">
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">S (挑戰)</h4>
+                        <p className="text-slate-700">
+                          案子牽涉台灣團隊、馬來西亞當地團隊與客戶端設計部門。雙方語系資料格式不一致、審核流程複雜，且需兼顧法遵規範、內容安全、SEO 架構等多項要求。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">T (任務)</h4>
+                        <p className="text-slate-700">
+                          制定可被雙方團隊理解與遵循的規格與內容架構，確保即使無 PM 協助，客戶也能持續更新與維護內容。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">A (行動)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">跨國規格文件制定：</span>提供完整 IA/規格文件，使雙方設計與開發團隊依同一標準作業。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">後台流程設計與文件化：</span>建立後台上稿流程、資料格式、內容模組化方式，提升營運維護效率。</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">R (成果)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span><span className="font-semibold">成功推出多語、高品質官網：</span>網站具備一致的設計標準、多語內容架構與後台管理系統，兼顧法遵需求與用戶體驗</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span><span className="font-semibold">降低長期維護成本：</span>客戶營運人員可在無 PM 協助下自行維護內容與進行多語更新，大幅降低後續維運成本與內部依賴度</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Project 3 */}
+                <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                  <button
+                    onClick={() => setExpandedProject(expandedProject === 3 ? null : 3)}
+                    className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
+                  >
+                    <div className="text-left flex-1">
+                      <h3 className="text-xl font-bold text-slate-900">大井泵浦</h3>
+                      <p className="text-blue-600 font-semibold mt-1">製造業 B2B 官網重構（優化後 STAR）</p>
+                      <p className="text-sm text-slate-600 mt-2">
+                        <span className="font-semibold">角色：</span>規格制定、需求管理、SEO 架構規劃、與 SEO 技術跨部門協作、業務協提
+                      </p>
+                    </div>
+                    <ChevronDown
+                      size={24}
+                      className={`text-slate-400 ml-4 flex-shrink-0 transition-transform ${
+                        expandedProject === 3 ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedProject === 3 && (
+                    <div className="border-t border-slate-200 px-8 py-6 bg-slate-50 space-y-6">
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">S (問題)</h4>
+                        <p className="text-slate-700">
+                          原網站資訊架構不利於 SEO，產品資料難以分類；後台維護流程繁雜，使客戶無法順利更新資料，導致網站長期內容老舊、影響詢價。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">T - Task (任務)</h4>
+                        <p className="text-slate-700">
+                          重構整體內容邏輯，改善前端 UX、後台維護體驗，並建立更清晰的產品分類與詢價流程。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">A - Action (行動)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">產品邏輯重新梳理：</span>深入訪談業務、技術與客戶，重新定義產品與服務分類邏輯，建立可延展的、SEO 友善的內容架構</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">前端 UX 規劃與設計：</span>與設計團隊協作規劃產品規格頁面 UI/UX，提升使用者在瀏覽產品資訊與比較時的效率</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">詢價流程設計：</span>建立簡化的詢價機制與表單邏輯，改善業務端接單流程，使客戶更容易提出詢價需求</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span><span className="font-semibold">SEO 技術協作：</span>與 SEO 技術團隊協作定義網站結構、資料格式、結構化資料與標記方式，提升搜尋引擎可見度</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">R - Result (成果)</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>新架構使產品資料更易於維護與更新，內容呈現邏輯更清晰。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>前端瀏覽體驗更順暢，使使用者更容易找到產品資訊。</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>客戶後續自行維運能力提升，網站不再依賴外部大量支援。</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </section>
+
+
+
+            {/* Earlier Experience */}
+            <section>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Earlier Experience | 早期經驗</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: '專案管理師',
+                    company: '普拉瑞斯創意整合有限公司',
+                    period: '2016 – 2018',
+                    desc: '網站企劃、前端協作、客戶溝通、專案管理'
+                  },
+                  {
+                    title: '網頁設計工程師',
+                    company: '李奧貝納股份有限公司',
+                    period: '2019',
+                    desc: '網站企劃、UI 設計、執行網頁改版內容'
+                  },
+                  {
+                    title: '網路行銷業務',
+                    company: '龍心數位科技有限公司',
+                    period: '2020',
+                    desc: '陌生開發、專案進度協調、前端支援'
+                  }
+                ].map((exp, idx) => (
+                  <div key={idx} className="bg-white rounded-lg shadow-md p-6 border-l-4 border-slate-300">
+                    <h3 className="font-bold text-slate-900">{exp.title}</h3>
+                    <p className="text-slate-600 text-sm mt-1">{exp.company}</p>
+                    <p className="text-slate-500 text-xs mt-1">{exp.period}</p>
+                    <p className="text-slate-700 mt-3 text-sm">{exp.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Education & Languages & Additional Info */}
+            <section className="bg-white rounded-lg shadow-md p-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Education & Additional Information</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Education */}
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h3 className="font-bold text-slate-900 mb-3">Education</h3>
+                  <p className="text-slate-700 font-semibold">嶺東科技大學</p>
+                  <p className="text-slate-600 text-sm">資訊管理系</p>
+                  <p className="text-slate-600 text-xs">2011.09 – 2016.06</p>
+                </div>
+
+                {/* Languages */}
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h3 className="font-bold text-slate-900 mb-3">Languages</h3>
+                  <p className="text-slate-700 font-semibold">English</p>
+                  <p className="text-slate-600 text-sm">Daily Conversation & Technical Documentation</p>
+                  <p className="text-slate-600 text-xs">IELTS 4.5</p>
+                </div>
+              </div>
+            </section>
+
+          </main>
+
+          {/* Footer */}
+          <footer className="border-t border-slate-200 bg-white mt-12">
+            <div className="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-slate-600">
+              <p>📄 PM Resume Demo | 邱詩家 | 0970-228-652 | antpower.56fk@gmail.com </p>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    // Render the app
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<FullResumeSite />);
+  </script>
+</body>
+</html>
