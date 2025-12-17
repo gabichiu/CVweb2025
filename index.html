@@ -744,10 +744,10 @@
               <span className="font-semibold"></span>
               <br />
               <h4 className="font-bold text-slate-900 flex items-center pb-2">{t.professionalSummary.keyHighlights[language]}</h4>
-              <ul className="ml-7 space-y-3">
+              <ul className="space-y-3">
                 {t.professionalSummary.highlights.map((highlight, idx) => (
                   <li key={idx} className="text-slate-700 flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
+                    <span className="text-2xl leading-none text-blue-500 mr-2">•</span>
                     <span>{highlight[language]}</span>
                   </li>
                 ))}
@@ -766,7 +766,7 @@
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {t.skills.productPM.items.map((skill, idx) => (
                     <div key={idx} className="flex items-start">
-                      <span className="text-blue-500 mr-3 mt-1">▸</span>
+                      <span className="text-2xl leading-none text-blue-500 mr-3">▸</span>
                       <span className="text-slate-700">{skill[language]}</span>
                     </div>
                   ))}
@@ -781,7 +781,7 @@
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {t.skills.executionDelivery.items.map((skill, idx) => (
                     <div key={idx} className="flex items-start">
-                      <span className="text-green-500 mr-3 mt-1">▸</span>
+                      <span className="text-2xl leading-none text-green-500 mr-3">▸</span>
                       <span className="text-slate-700">{skill[language]}</span>
                     </div>
                   ))}
@@ -796,7 +796,7 @@
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {t.skills.techTools.items.map((skill, idx) => (
                     <div key={idx} className="flex items-start">
-                      <span className="text-purple-500 mr-3 mt-1">▸</span>
+                      <span className="text-2xl leading-none text-purple-500 mr-3">▸</span>
                       <span className="text-slate-700">{skill[language]}</span>
                     </div>
                   ))}
@@ -827,10 +827,10 @@
                       <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">→</span>
                       {t.workExperience.responsibilitiesTitle[language]}
                     </h4>
-                    <ul className="ml-7 space-y-3">
+                    <ul className="space-y-3">
                       {t.workExperience.responsibilities.map((resp, idx) => (
                         <li key={idx} className="text-slate-700 flex items-start">
-                          <span className="text-blue-500 mr-2">•</span>
+                          <span className="text-2xl leading-none text-blue-500 mr-2">•</span>
                           <span>{resp[language]}</span>
                         </li>
                       ))}
@@ -843,7 +843,7 @@
                       <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2">✓</span>
                       {t.workExperience.achievementsTitle[language]}
                     </h4>
-                    <ul className="ml-7 space-y-3">
+                    <ul className="space-y-3">
                       {t.workExperience.achievements.map((achievement, idx) => (
                         <li key={idx} className="text-slate-700 flex items-start">
                           <span className="text-green-500 mr-2">✓</span>
