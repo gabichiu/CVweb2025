@@ -137,9 +137,35 @@
             <section className="bg-white rounded-lg shadow-md p-8 border-l-4 border-blue-500">
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Professional Summary | 專業摘要</h2>
               <p className="text-slate-700 leading-relaxed text-base">
-                <span className="font-semibold">具 4 年以上網站專案管理經驗，並累積多年網站規劃與實作背景，擅長跨部門協作、使用者研究、需求洞察與產品規劃。</span><br />
-                熱愛找出問題本質並以結構化方式提出解決方案，熟悉從前期探索、規劃、執行到驗收的完整流程。近年積極往產品經理方向發展，對平台型產品、數據驅動決策與用戶體驗優化特別有熱情。注重效率與溝通，能在高不確定性環境中快速整合資訊、制定可行策略並落地執行。
+                具 4 年以上網站專案管理經驗，擅長在專案前期協助釐清需求本質，評估解法取捨，規劃可落地的執行方案。<br /><br />
+                過往累積多年第一線網站實作與交付經驗，使我在分析與判斷時能兼顧可行性、成本與團隊執行現實，因此在專案前期常扮演介於業務、客戶與執行團隊之間的角色，協助釐清客戶「想解決的問題」而非僅回應表層需求，並在可行性、成本與長期維運之間做出取捨建議，避免過度開發或不必要的功能堆疊。<br /><br />
+                目前聚焦於產品與平台型專案的前期規劃與決策支援，對數據驅動決策與用戶體驗優化特別有熱情，並期望在既有的執行與判斷基礎上，逐步引入數據與使用者回饋，作為驗證假設與優化產品方向的重要依據。
               </p>
+              <span className="font-semibold"></span>
+              <br />
+              <h4 class="font-bold text-slate-900 flex items-center pb-2">Key Highlights：</h4>
+              <ul className="ml-7 space-y-3">
+                <li className="text-slate-700 flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>從第一線實作與交付出身，具完整網站專案執行與落地理解</span>
+                </li>
+                <li className="text-slate-700 flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>擅長於專案前期釐清需求本質，判斷解法取捨與可行性</span>
+                </li>
+                <li className="text-slate-700 flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>能在客戶期待、技術限制與團隊資源間取得平衡，避免過度開發</span>
+                </li>
+                <li className="text-slate-700 flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>專注於產品與平台型專案的前期規劃與決策支援</span>
+                </li>
+                <li className="text-slate-700 flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>正逐步引入數據與使用者回饋，驗證假設並優化產品方向</span>
+                </li>
+              </ul>
             </section>
 
             {/* Skills */}
@@ -301,12 +327,103 @@
                 {/* Project 1 */}
                 <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
                   <button
+                    onClick={() => setExpandedProject(expandedProject === 3 ? null : 3)}
+                    className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
+                  >
+                    <div className="text-left flex-1">
+                      <h3 className="text-xl font-bold text-slate-900">大井泵浦 Walrus Pump</h3>
+                      <p className="text-blue-600 font-semibold mt-1">B2B 製造業官網重構</p>
+                      <p className="text-sm text-slate-600 mt-2">
+                        <span className="font-semibold">角色：</span>需求分析、產品與資訊架構規劃、SEO 策略整合、跨團隊協作
+                      </p>
+                    </div>
+                    <ChevronDown
+                      size={24}
+                      className={`text-slate-400 ml-4 flex-shrink-0 transition-transform ${
+                        expandedProject === 3 ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedProject === 3 && (
+                    <div className="border-t border-slate-200 px-8 py-6 bg-slate-50 space-y-6">
+
+                      <div className="border-l-4 border-blue-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">情境（Situation）</h4>
+                        <p className="text-slate-700 leading-relaxed">
+                          大井泵浦為 B2B 製造業品牌，原有官網以靜態產品展示為主，產品結構複雜、規格資訊零散，對實際採購者與經銷夥伴而言，「找不到適合的產品」與「資料難以更新」成為主要痛點。
+                        </p>
+                        <p className="text-slate-700 leading-relaxed mt-3">
+                          同時，客戶希望透過官網強化國際市場能見度，但既有架構對 SEO 與後續數位行銷極不友善，若僅進行表層改版，將無法支撐長期成長。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">關鍵判斷（Key Judgment）</h4>
+                        <p className="text-slate-700 leading-relaxed">
+                          在前期評估中，我提出核心判斷：<span className="font-semibold">這不是單純的視覺改版，而是需要以「產品與使用情境」為核心，重新設計網站的產品結構與資料邏輯。</span>
+                        </p>
+                        <p className="text-slate-700 leading-relaxed mt-3">
+                          若未先解決資訊架構與後台資料可維運性，即使短期上線，也會在後續 SEO、內容擴充與行銷操作中產生大量重工成本。
+                        </p>
+                      </div>
+
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">行動（Action｜你如何把判斷轉為可落地方案）</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span>重新定義兩大使用角色（直客採購、經銷商），並對應不同的資訊任務</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span>重建產品分類邏輯，規劃可延展的產品資料庫與參數結構</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span>設計產品篩選與詢價流程，讓使用者能依實務條件快速找到合適產品</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span>於前期即納入 SEO 規劃，透過競爭分析與關鍵字佈局，建立長期可優化的內容架構</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-green-500 mr-2">→</span>
+                            <span>在功能深度與開發成本間進行取捨，提出可分階段實施的解法，降低一次性導入風險</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h4 className="font-bold text-slate-900 mb-2">結果（Result）</h4>
+                        <ul className="space-y-2">
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>協助客戶釐清官網的核心角色與定位，從「展示型網站」轉為「支援銷售與經銷的產品平台」</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>建立清楚的產品與內容架構，使後續資料更新、產品擴充與 SEO 優化皆有一致依循</span>
+                          </li>
+                          <li className="text-slate-700 flex items-start">
+                            <span className="text-purple-500 mr-2">✓</span>
+                            <span>在專案初期即對齊方向與取捨，避免後期因架構不良而產生的大規模重製風險</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Project 2 */}
+                <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
+                  <button
                     onClick={() => setExpandedProject(expandedProject === 1 ? null : 1)}
                     className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
                   >
                     <div className="text-left flex-1">
                       <h3 className="text-xl font-bold text-slate-900">鈺創科技 Etron</h3>
-                      <p className="text-blue-600 font-semibold mt-1">上市櫃 IC Design 官網改版（優化後 STAR）</p>
+                      <p className="text-blue-600 font-semibold mt-1">上市櫃 IC Design 官網改版</p>
                       <p className="text-sm text-slate-600 mt-2">
                         <span className="font-semibold">角色：</span>跨部門窗口統籌、需求分析、資訊架構規劃、開發協作
                       </p>
@@ -389,7 +506,7 @@
                   )}
                 </div>
 
-                {/* Project 2 */}
+                {/* Project 3 */}
                 <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
                   <button
                     onClick={() => setExpandedProject(expandedProject === 2 ? null : 2)}
@@ -397,7 +514,7 @@
                   >
                     <div className="text-left flex-1">
                       <h3 className="text-xl font-bold text-slate-900">中租馬來西亞</h3>
-                      <p className="text-blue-600 font-semibold mt-1">跨國金融服務官網建置（優化後 STAR）</p>
+                      <p className="text-blue-600 font-semibold mt-1">跨國金融服務官網建置</p>
                       <p className="text-sm text-slate-600 mt-2">
                         <span className="font-semibold">角色：</span>規格制定、SEO 架構、跨國開發協作
                       </p>
@@ -451,87 +568,6 @@
                           <li className="text-slate-700 flex items-start">
                             <span className="text-purple-500 mr-2">✓</span>
                             <span><span className="font-semibold">降低長期維護成本：</span>客戶營運人員可在無 PM 協助下自行維護內容與進行多語更新，大幅降低後續維運成本與內部依賴度</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Project 3 */}
-                <div className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden">
-                  <button
-                    onClick={() => setExpandedProject(expandedProject === 3 ? null : 3)}
-                    className="w-full p-8 hover:bg-slate-50 transition-colors flex justify-between items-start"
-                  >
-                    <div className="text-left flex-1">
-                      <h3 className="text-xl font-bold text-slate-900">大井泵浦</h3>
-                      <p className="text-blue-600 font-semibold mt-1">製造業 B2B 官網重構（優化後 STAR）</p>
-                      <p className="text-sm text-slate-600 mt-2">
-                        <span className="font-semibold">角色：</span>規格制定、需求管理、SEO 架構規劃、與 SEO 技術跨部門協作、業務協提
-                      </p>
-                    </div>
-                    <ChevronDown
-                      size={24}
-                      className={`text-slate-400 ml-4 flex-shrink-0 transition-transform ${
-                        expandedProject === 3 ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-
-                  {expandedProject === 3 && (
-                    <div className="border-t border-slate-200 px-8 py-6 bg-slate-50 space-y-6">
-
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-bold text-slate-900 mb-2">S (問題)</h4>
-                        <p className="text-slate-700">
-                          原網站資訊架構不利於 SEO，產品資料難以分類；後台維護流程繁雜，使客戶無法順利更新資料，導致網站長期內容老舊、影響詢價。
-                        </p>
-                      </div>
-
-                      <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-bold text-slate-900 mb-2">T - Task (任務)</h4>
-                        <p className="text-slate-700">
-                          重構整體內容邏輯，改善前端 UX、後台維護體驗，並建立更清晰的產品分類與詢價流程。
-                        </p>
-                      </div>
-
-                      <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-bold text-slate-900 mb-2">A - Action (行動)</h4>
-                        <ul className="space-y-2">
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-green-500 mr-2">→</span>
-                            <span><span className="font-semibold">產品邏輯重新梳理：</span>深入訪談業務、技術與客戶，重新定義產品與服務分類邏輯，建立可延展的、SEO 友善的內容架構</span>
-                          </li>
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-green-500 mr-2">→</span>
-                            <span><span className="font-semibold">前端 UX 規劃與設計：</span>與設計團隊協作規劃產品規格頁面 UI/UX，提升使用者在瀏覽產品資訊與比較時的效率</span>
-                          </li>
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-green-500 mr-2">→</span>
-                            <span><span className="font-semibold">詢價流程設計：</span>建立簡化的詢價機制與表單邏輯，改善業務端接單流程，使客戶更容易提出詢價需求</span>
-                          </li>
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-green-500 mr-2">→</span>
-                            <span><span className="font-semibold">SEO 技術協作：</span>與 SEO 技術團隊協作定義網站結構、資料格式、結構化資料與標記方式，提升搜尋引擎可見度</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className="border-l-4 border-purple-500 pl-4">
-                        <h4 className="font-bold text-slate-900 mb-2">R - Result (成果)</h4>
-                        <ul className="space-y-2">
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-purple-500 mr-2">✓</span>
-                            <span>新架構使產品資料更易於維護與更新，內容呈現邏輯更清晰。</span>
-                          </li>
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-purple-500 mr-2">✓</span>
-                            <span>前端瀏覽體驗更順暢，使使用者更容易找到產品資訊。</span>
-                          </li>
-                          <li className="text-slate-700 flex items-start">
-                            <span className="text-purple-500 mr-2">✓</span>
-                            <span>客戶後續自行維運能力提升，網站不再依賴外部大量支援。</span>
                           </li>
                         </ul>
                       </div>
